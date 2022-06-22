@@ -1,5 +1,6 @@
 import { Notify } from 'notiflix';
 
+const listEl = document.querySelector('.country-list');
 function possibleCountriesMarkup(data) {
     const markup = data.map(({flags, name}) => {
         const flagsEl = Object.values(flags.svg).join('');

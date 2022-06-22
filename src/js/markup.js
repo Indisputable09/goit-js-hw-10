@@ -1,3 +1,5 @@
+import { Notify } from 'notiflix';
+
 function possibleCountriesMarkup(data) {
     const markup = data.map(({flags, name}) => {
         const flagsEl = Object.values(flags.svg).join('');
@@ -43,7 +45,7 @@ function chosenCountryMarkup(data) {
     listEl.innerHTML = markup;
 }
 
-export function correctMarkup(data) {
+export default function correctMarkup(data) {
     {
         if (data.length > 10) {
             Notify.info('Too many matches found. Please enter a more specific name.')

@@ -2,6 +2,9 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+}
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -17,4 +20,21 @@ body {
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+}
+
+.flag {
+  width: 30px;
+  height: 30px;
+}
+
+.small__img {
+  margin-right: 10px;
+}
+
+.small__text {
+  font-size: 20px;
+}
+
+.original__img {
+  margin-right: 20px;
 }

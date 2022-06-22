@@ -16,11 +16,11 @@ function possibleCountriesMarkup(data) {
 function chosenCountryMarkup(data) {
     const markup = data.map(({ languages, flags, name, capital, population }) => {
         const languagesEl = Object.values(languages).join(", ");
-        const numberOfLanguages = Object.keys(languages);
+        const numberOfLanguages = Object.keys(languages).length;
         const flagsEl = Object.values(flags.svg).join('');
         const nameEl = name.official;
 
-        if (numberOfLanguages.length > 1) {
+        if (numberOfLanguages > 1) {
             return `<li>
         <h1>
         <span class = "original__img"><img src="${flagsEl}" alt="country flag" width = "40"/></span>${nameEl}

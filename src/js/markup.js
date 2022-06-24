@@ -47,7 +47,7 @@ function chosenCountryMarkup(data) {
 }
 
 export default function correctMarkup(data) {
-    {
+    
         if (data.length > 10) {
             Notify.info('Too many matches found. Please enter a more specific name.')
             listEl.innerHTML = '';
@@ -58,5 +58,9 @@ export default function correctMarkup(data) {
         if (data.length == 1) {
             chosenCountryMarkup(data);
         }
-    }
+}
+
+export  const catchError = () => {
+    Notify.failure("Oops, there is no country with that name")
+    listEl.innerHTML = "";
 }

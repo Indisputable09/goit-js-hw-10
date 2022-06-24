@@ -1,7 +1,7 @@
 import debounce from 'lodash.debounce';
-import { Notify } from "notiflix";
 import fetchCountries from './js/fetchCountries';
 import correctMarkup from "./js/markup";
+import {catchError} from "./js/markup";
 import './css/styles.css';
 
 const DEBOUNCE_DELAY = 300;
@@ -16,8 +16,5 @@ function onInput(e) {
         listEl.innerHTML = '';
         return;
     }
-    fetchCountries(inputValue).then(correctMarkup).catch(() => {
-        Notify.failure("Oops, there is no country with that name")
-        listEl.innerHTML = "";
-});
+    fetchCountries(inputValue).then(correctMarkup).catch(catchError)
 }
